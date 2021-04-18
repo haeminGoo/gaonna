@@ -43,11 +43,11 @@ const Data = (props) => {
         key: 'fileName', 
         dataIndex: 'fileName',
         render: (value, record, index) => <Space direction="vertical">
-          {/* <img src={`${imageFolder}/${value}`} /> */}
+          <img style={{width: '120px'}} src={`${process.env.PUBLIC_URL}/Source/${props.match.params.name}/${value}`} />
           <Text>{value}</Text>
         </Space>,
         align: 'center',
-        width: 80
+        width: 120
       },{
         title: 'data',
         dataIndex: 'data',
@@ -167,7 +167,7 @@ const Data = (props) => {
     }
 
     return (
-      <Spin spinning={loading}>
+      <Spin spinning={loading} style={{padding: 20}}>
         <Table
             title={()=><Button disabled={taobaoResult.length === 0} onClick={saveTaobaoData} block type="primary" icon={<SaveOutlined />}>데이터 저장하기</Button>}
             style={{marginTop: '20px'}}
