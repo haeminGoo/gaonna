@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/gaonna/static/css/main.e40e362e.chunk.css",
-    "main.js": "/gaonna/static/js/main.4d5d59ca.chunk.js",
-    "main.js.map": "/gaonna/static/js/main.4d5d59ca.chunk.js.map",
+    "main.js": "/gaonna/static/js/main.270f2c03.chunk.js",
+    "main.js.map": "/gaonna/static/js/main.270f2c03.chunk.js.map",
     "runtime-main.js": "/gaonna/static/js/runtime-main.0dbbcd0e.js",
     "runtime-main.js.map": "/gaonna/static/js/runtime-main.0dbbcd0e.js.map",
     "static/css/2.de2ac02e.chunk.css": "/gaonna/static/css/2.de2ac02e.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.de2ac02e.chunk.css",
     "static/js/2.1dac2b58.chunk.js",
     "static/css/main.e40e362e.chunk.css",
-    "static/js/main.4d5d59ca.chunk.js"
+    "static/js/main.270f2c03.chunk.js"
   ]
 }
