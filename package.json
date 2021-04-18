@@ -1,5 +1,6 @@
 {
   "homepage": "https://haeminGoo.github.io/gaonna",
+  "main": "/gaonna",
   "name": "gaonna",
   "version": "0.1.0",
   "private": true,
