@@ -11,12 +11,14 @@ const { Text, Title } = Typography;
 const Data = (props) => {
     console.log(props)
     const [taobaoResult, setTaobaoResult] = useState([])
+    const [loading, setLoading] = useState(false)
 
     useEffect(()=>{
         if(props.match.params.name !== undefined){
-            axios.get(`/Source/${props.match.params.name}.json`)
+            setLoading(true)
+            axios.get(`${process.env.PUBLIC_URL}/Source/${props.match.params.name}.json`)
             .then(res => {
-                console.log(res.data)
+                
                 if(res.data !== taobaoResult){
                     let newres = res.data.map(el=>{
                       el.cheapest = 0;
@@ -26,7 +28,12 @@ const Data = (props) => {
                       return el
                     })
                     setTaobaoResult(newres)
+                    setLoading(false)
                 }
+            })
+            .catch(()=>{
+              message.error('데이터 로드에 실패했습니다.')
+              setLoading(false)
             })
         }
     }, [props])
@@ -160,6 +167,7 @@ const Data = (props) => {
     }
 
     return (
+      <Spin spinning={loading}>
         <Table
             title={()=><Button disabled={taobaoResult.length === 0} onClick={saveTaobaoData} block type="primary" icon={<SaveOutlined />}>데이터 저장하기</Button>}
             style={{marginTop: '20px'}}
@@ -171,6 +179,7 @@ const Data = (props) => {
             bordered
             rowClassName={(record, index)=> record.disabled ? 'disabled' : ''}
         />
+      </Spin>
     )
 }
 export default Data

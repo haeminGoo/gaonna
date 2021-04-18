@@ -13,8 +13,8 @@ export default function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Switch>
-          <Route path={`/:name`} component={Data}/>
-          <Route path={`/`} component={Data}/>
+          <Route exact path={`/:name`} component={Data}/>
+          <Route exact path={`/`} component={Data}/>
         </Switch>
     </Router>
   );
