@@ -16,7 +16,7 @@ const Data = (props) => {
     useEffect(()=>{
         if(props.match.params.name !== undefined){
             setLoading(true)
-            axios.get(`${process.env.PUBLIC_URL}/Source/${props.match.params.name}.json`)
+            axios.get(`${process.env.PUBLIC_URL}/Source/${props.match.params.name}/scrapData.json`)
             .then(res => {
                 
                 if(res.data !== taobaoResult){
@@ -167,7 +167,8 @@ const Data = (props) => {
     }
 
     return (
-      <Spin spinning={loading} style={{padding: 20}}>
+      <div style={{width: '1250px', margin: '10px auto'}}>
+      <Spin spinning={loading}>
         <Table
             title={()=><Button disabled={taobaoResult.length === 0} onClick={saveTaobaoData} block type="primary" icon={<SaveOutlined />}>데이터 저장하기</Button>}
             style={{marginTop: '20px'}}
@@ -180,6 +181,7 @@ const Data = (props) => {
             rowClassName={(record, index)=> record.disabled ? 'disabled' : ''}
         />
       </Spin>
+      </div>
     )
 }
 export default Data
