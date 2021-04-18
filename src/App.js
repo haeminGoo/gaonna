@@ -13,7 +13,7 @@ export default function App() {
   return (
     <Router>
       <Switch>
-          <Route exact path="/:name" component={Data}/>
+          <Route exact path="/gaonna/:name" component={Data}/>
         </Switch>
     </Router>
   );

@@ -14,7 +14,7 @@ const Data = (props) => {
 
     useEffect(()=>{
         if(props.match.params.name !== undefined){
-            axios.get(`/Source/${props.match.params.name}.json`)
+            axios.get(`gaonna/Source/${props.match.params.name}.json`)
             .then(res => {
                 console.log(res.data)
                 if(res.data !== taobaoResult){
