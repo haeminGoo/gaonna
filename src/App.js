@@ -11,9 +11,10 @@ import Data from './Pages/Data'
 
 export default function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
-          <Route exact path="/gaonna/:name" component={Data}/>
+          <Route path={`/:name`} component={Data}/>
+          <Route path={`/`} component={Data}/>
         </Switch>
     </Router>
   );
